@@ -1,0 +1,21 @@
+---
+:project:
+  :use_exceptions: FALSE
+  :use_test_preprocessor: TRUE
+  :build_root: build
+  :test_file_prefix: test_
+
+:paths:
+  :test: [ +:test/** ]
+  :source: [ src/** ]
+  :include: [ include/** ]
+
+:defines:
+  :test: [ UNIT_TEST ]
+
+:cmock:
+  :mock_prefix: mock_
+  :plugins: [ :ignore, :callback, :return_thru_ptr ]
+
+:plugins:
+  :enabled: [ stdout_pretty_tests_report, gcov ]

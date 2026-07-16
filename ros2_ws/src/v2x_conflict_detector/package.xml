@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>v2x_conflict_detector</name>
+  <version>1.0.0</version>
+  <description>Pairwise TTC computation and emergency-brake arbitration</description>
+  <maintainer email="dev@example.com">V2X Team</maintainer>
+  <license>Apache-2.0</license>
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <depend>rclcpp</depend>
+  <depend>v2x_msgs</depend>
+  <test_depend>ament_cmake_gtest</test_depend>
+  <export><build_type>ament_cmake</build_type></export>
+</package>
