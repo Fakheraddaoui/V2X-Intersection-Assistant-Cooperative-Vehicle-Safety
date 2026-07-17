@@ -22,6 +22,8 @@ ros2_ws/src/
 
 ## Run the tests
 ```bash
-cd firmware && ceedling test:all
+make -C firmware test
 cd ros2_ws && colcon build && colcon test
 ```
+
+> Firmware unit tests run with a vendored [Unity](https://github.com/ThrowTheSwitch/Unity) harness (`make test`) — no Ruby/Ceedling required. A legacy `project.yml` is kept for teams using Ceedling 0.31.x locally.

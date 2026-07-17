@@ -5,16 +5,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: ruby/setup-ruby@v1
-        with: { ruby-version: '3.2' }
-      - run: gem install ceedling
-      - run: cd firmware && ceedling test:all
+      - run: make -C firmware test
   ros2-tests:
     runs-on: ubuntu-latest
     container: ros:humble
     steps:
       - uses: actions/checkout@v4
-      - run: |
+      - shell: bash
+        run: |
+          source /opt/ros/humble/setup.bash
           cd ros2_ws
-          . /opt/ros/humble/setup.sh
-          colcon build && colcon test && colcon test-result --verbose
+          colcon build
+          colcon test
+          colcon test-result --verbose
